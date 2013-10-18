@@ -1,22 +1,47 @@
 # Implementar en este fichero la clase para crear objetos racionales
 
+require "./mcm.rb"
 require "./gcd.rb"
 
 class Fraccion
-  #Constructor de la clase
-  def initialize (n,d)
-    mcd = gcd(n,d)
-    @n = n / mcd
-    @d = d / mcd
-  end
+   #Constructor
+   def initialize(n,d)
+        @n = n
+        @d = d
+   end
+   
+   #Devuelve una cadena en representacion racional  
+   def to_s
+      return "#{@n} #{@d}"
+   end
 
-  #Metodo convertir a string
-  def to_s #devuelve una cadena
-    return %Q(#{@n} #{@d})
-  end
+   #Suma
+   def suma(x,y)
+      d = mcm(@d,y) #minimo comun multiplo de los divisores
+      n = ((d/@d) * @n) + ((d/y) * x) #calcular el numerador
+      return Fraccion.new(n, d)
+   end
 
-  #Metodo suma
-  def suma
+   #Resta
+   def resta(x,y) 
+      d = mcm(@d,y) #minimo comun multiplo de los divisores
+      n = ((d/@d) * @n) - ((d/y) * x) #calcular numerador
+      return Fraccion.new(n, d)       
+   end
 
-  end
+   #Multiplicacion
+   def producto(x,y) 
+      n = @n * x #numerador por numerador
+      d = @d * y #denominador por denominador
+      return Fraccion.new(n, d)
+   end
+
+   #Division
+   def division(x,y) 
+      n = @n*y #numerador por denominador
+      d = @d*x #denominador por numerador
+      return Fraccion.new(n, d)
+   end
+
 end
+

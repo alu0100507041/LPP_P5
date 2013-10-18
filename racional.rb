@@ -10,5 +10,13 @@ class Fraccion
     @d = d / mcd
   end
 
-  #
+  #Metodo convertir a string
+  def to_s #devuelve una cadena
+    return %Q(#{@n} #{@d})
+  end
+
+  #Metodo suma
+  def suma
+
+  end
 end

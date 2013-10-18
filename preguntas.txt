@@ -1,0 +1,14 @@
+¿Cuál es el error en el código del método para calcular el máximo común divisor?
+
+La condicion del while esta erronea ya que si pone "v == 0" jamás entraría en el while, por lo que hay que añadirle un distinto "v != 0".
+
+¿Qué comandos del depurador utilizó para detectarlo? Describa la sesión de depuración.
+
+1. Invocar al comando ruby -rdebug gcd.rb
+2. l Sirve para listar las lineas del codigo que esta enumerado
+3. n Sirve para ejecutar sentencia por sentencia
+De esta manera se comprobaba que no entraba en el while.
+
+Escriba la dirección 'HTTP' del repositorio que contiene el desarrollo de su práctica.
+
+https://github.com/alu0100507041/LPP_P5/
